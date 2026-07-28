@@ -1,31 +1,307 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Image } from 'astro:assets';
+import '../styles/global.css';
+// Importación de imágenes locales - Asegúrate de que las rutas son correctas
+import fotoClase from '../assets/images/logo_5_2cm.png';
+import fotoTaller from '../assets/images/logo_3_5cm.png';
+import logoSunne from '../assets/images/logo_1_7cm.png';
+import fotoBiblioteca from '../assets/images/logo-estrella_5_2cm.png';
 ---
 
-<form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-4 max-w-md mx-auto">
-  
-  <input type="hidden" name="access_key" value="95b4dd1a-0bd0-425a-8f6b-6f512299cf76" />
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <title>SUNNE ACADEMY - Formación y Futuro</title>
+        
+        <!-- Fuentes e Iconos -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    
+    <body class="bg-slate-50 text-slate-900" style="font-family: 'Inter', sans-serif;">
 
-  <div>
-    <label class="block text-sm font-medium mb-1">Nombre</label>
-    <input type="text" name="name" required class="w-full border rounded p-2" />
-  </div>
+        <!-- 1. NAVBAR / CABECERA -->
+        <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        <a href="#inicio" class="flex items-center gap-3">
+            <Image 
+                src={logoSunne} 
+                alt="Logo SUNNE ACADEMY" 
+                class="h-30 w-auto object-contain"
+            />
+            
+        </a>
+        <div class="space-x-4">
+            <a href="#galeria" class="text-sm text-slate-700 hover:text-blue-700">Galería</a>
+            <a href="#contacto" class="text-sm text-slate-700 hover:text-blue-700">Contacto</a>
+        </div>
+    </div>
+</nav>
 
-  <div>
-    <label class="block text-sm font-medium mb-1">Correo electronico</label>
-    <input type="email" name="email" required class="w-full border rounded p-2" />
-  </div>
+        <!-- 2. HERO SECTION -->
+        <header id="inicio" class="bg-white border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 text-center">
+                <span class="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-black-500 ring-1 ring-inset ring-blue-700/10 mb-4">
+                    Abierto el plazo de matrícula 2026/27
+                </span>
+                
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950 max-w-3xl mx-auto leading-tight">
+                    Impulsa tu aprendizaje en <span class="text-orange-500">SUNNE ACADEMY</span>
+                </h1>
+                
+                <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">
+                    Refuerzo escolar, idiomas y preparación de exámenes en un ambiente familiar y profesional en San Cristóbal de La Laguna.
+                </p>
+                <div class="mt-10">
+                  <a href="#contacto" class="bg-slate-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-slate-800 transition shadow-md hover:shadow-lg">Solicitar Información</a>
+                </div>
+            </div>
+        </header>
 
-  <div>
-    <label class="block text-sm font-medium mb-1">Mensaje</label>
-    <textarea name="message" required class="w-full border rounded p-2" rows="4"></textarea>
-  </div>
+        <main class="max-w-7xl mx-auto px-6 py-20 space-y-32">
 
-  <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
-    Enviar mensaje
-  </button>
-</form>
+            <!-- 3. GALERÍA DE FOTOS Y SERVICIOS -->
+            <section id="galeria">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold tracking-tight text-slate-950">Nuestras Actividades y Centro</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Un espacio diseñado para el estudio concentrado y el aprendizaje dinámico.</p>
+                </div>
+
+                <!-- Rejilla Principal de Tarjetas -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                    
+                    <!-- FOTO 1 -->
+                    <div class="group overflow-hidden rounded-3xl bg-white shadow-lg border border-slate-100 transition hover:shadow-xl flex flex-col justify-between">
+                        <Image 
+                            src={fotoClase} 
+                            alt="Clase presencial de matemáticas" 
+                            class="w-full h-64 object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-semibold text-slate-950">Grupos Reducidos</h3>
+                            <p class="mt-1 text-sm text-slate-600">Atención personalizada para resolver dudas específicas.</p>
+                        </div>
+                    </div>
+
+                    <!-- FOTO 2 -->
+                    <div class="group overflow-hidden rounded-3xl bg-white shadow-lg border border-slate-100 transition hover:shadow-xl flex flex-col justify-between">
+                        <Image 
+                            src={fotoTaller} 
+                            alt="Taller de idiomas para niños" 
+                            class="w-full h-64 object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-semibold text-slate-950">Talleres Prácticos</h3>
+                            <p class="mt-1 text-sm text-slate-600">Aprendizaje activo y dinámico para todas las edades.</p>
+                        </div>
+                    </div>
+
+                    <!-- FOTO 3 -->
+                    <div class="group overflow-hidden rounded-3xl bg-white shadow-lg border border-slate-100 transition hover:shadow-xl flex flex-col justify-between">
+                        <Image 
+                            src={fotoBiblioteca} 
+                            alt="Zona de estudio libre" 
+                            class="w-full h-64 object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div class="p-6 text-center">
+                            <h3 class="text-lg font-semibold text-slate-950">Zona de Estudio</h3>
+                            <p class="mt-1 text-sm text-slate-600">Espacio silencioso disponible para nuestros alumnos.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bloque destacado de Metodología y Seguimiento -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mt-16 bg-white rounded-3xl p-8 border border-slate-100 shadow-md">
+                    
+                    <div class="text-left md:text-right space-y-2">
+                        <h4 class="text-xl font-bold text-slate-900">Metodología Activa</h4>
+                        <p class="text-sm text-slate-600">
+                            Fomentamos la participación constante y la resolución práctica de ejercicios en cada sesión.
+                        </p>
+                    </div>
+
+                    <div class="group overflow-hidden rounded-2xl bg-slate-50 border border-slate-100 p-2 text-center">
+                        <Image 
+                            src={fotoTaller} 
+                            alt="Metodología de talleres" 
+                            class="w-full h-48 object-contain p-2 group-hover:scale-105 transition-transform duration-300 mx-auto"
+                        />
+                    </div>
+
+                    <div class="text-left space-y-2">
+                        <h4 class="text-xl font-bold text-slate-900">Seguimiento Continuo</h4>
+                        <p class="text-sm text-slate-600">
+                            Evaluamos el progreso de cada estudiante para reforzar los puntos clave antes de los exámenes.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+            
+
+            <!-- 4. SECCIÓN DE CONTACTO -->
+            <section id="contacto" class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden relative z-10">
+                <div class="grid md:grid-cols-2 items-center">
+                    
+                    <div class="p-12 md:p-16">
+                        <h2 class="text-4xl font-bold tracking-tight text-slate-950">¿Hablamos?</h2>
+                        <p class="mt-4 text-lg text-slate-600">
+                            Déjanos tus datos o ven a visitarnos. Estaremos encantados de resolver tus dudas sobre horarios, precios y metodología.
+                        </p>
+                        
+                        <div class="mt-10 space-y-6 text-slate-700">
+                            <!-- Dirección / Google Maps -->
+        <p class="flex items-center gap-3">
+            <span class="text-xl">📍</span>
+            <span>
+                <strong class="font-semibold text-orange-500">Dirección: </strong> 
+                <a href="https://www.google.com/maps/place/Sunne+Academy/@28.3879,-16.53875,872m/data=!3m2!1e3!4b1!4m6!3m5!1s0xc6a81096ee458f9:0xeba96ebe28419738!8m2!3d28.3879!4d-16.53875!16s%2Fg%2F11zh60hvv7?hl=es&entry=ttu&g_ep=EgoyMDI2MDcyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="hover:text-orange-600 underline decoration-orange-200 underline-offset-4 transition">
+                    Calle Cándidas Bajas, 29
+                </a>
+            </span>
+        </p>
+                            <!-- WhatsApp -->
+        <p class="flex items-center gap-3">
+            <span class="text-xl">💬</span>
+            <span>
+                <strong class="font-semibold text-orange-500">WhatsApp: </strong> 
+                <a href="https://wa.me/34663317695" target="_blank" rel="noopener noreferrer" class="hover:text-orange-600 underline decoration-orange-200 underline-offset-4 transition">
+                    +34 663 31 76 95
+                </a>
+            </span>
+        </p>
+                            <!-- Email -->
+        <p class="flex items-center gap-3">
+            <span class="text-xl">✉️</span>
+            <span>
+                <strong class="font-semibold text-orange-500">Email: </strong> 
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sunneacademy@gmail.com" class="hover:text-orange-600 underline decoration-orange-200 underline-offset-4 transition">
+                    sunneacademy@gmail.com
+                </a>
+            </span>
+        </p>
+                            <p class="flex items-center gap-3">
+            <span class="text-xl">📸</span>
+            <span>
+                <strong class="font-semibold text-orange-500">Instagram: </strong> 
+                <a href="https://www.instagram.com/sunneacademy" target="_blank" rel="noopener noreferrer" class="hover:text-orange-600 underline decoration-orange-200 underline-offset-4 transition">
+                    @sunneacademy
+                </a>
+            </span>
+        </p>
+                        </div>
+                    </div>
+
+                    <!-- FORMULARIO DE CONTACTO -->
+                    <div class="bg-slate-50 p-12 md:p-16 border-t md:border-t-0 md:border-l border-slate-100 relative z-10">
+                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                            
+                            <input type="hidden" name="access_key" value="95b4dd1a-0bd0-425a-8f6b-6f512299cf76" />
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Nombre completo</label>
+                                <input type="text" name="name" id="name" required placeholder=""
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-200 focus:border-blue-400 transition bg-white outline-none" />
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Correo electrónico</label>
+                                <input type="email" name="email" id="email" required placeholder=""
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-200 focus:border-blue-400 transition bg-white outline-none" />
+                            </div>
+
+							<div>
+                                <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Tu número de teléfono</label>
+                                <textarea name="message" id="message" required rows="1" placeholder=""
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-200 focus:border-blue-400 transition bg-white resize-none outline-none"></textarea>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Tu consulta</label>
+                                <textarea name="message" id="message" required rows="4" placeholder="¿En qué curso estás interesado?..."
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-200 focus:border-blue-400 transition bg-white resize-none outline-none"></textarea>
+                            </div>
+
+							
+
+                            <button type="submit" 
+                                class="w-full bg-slate-900 text-white py-4 rounded-xl font-semibold hover:bg-slate-800 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer">
+                                Enviar
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 5. FOOTER -->
+        <footer class="bg-slate-950 text-slate-400 mt-20">
+            <div class="max-w-7xl mx-auto px-6 py-12 text-center text-sm">
+                <p>&copy; SUNNE ACADEMY. Todos los derechos reservados.</p>
+                <p class="mt-2 text-xs">Villa de la Orotava, Tenerife.</p>
+            </div>
+        </footer>
+
+        <!-- =============================================
+             BARRA LATERAL FLOTANTE DE WHATSAPP
+             ============================================= -->
+        <div class="whatsapp-widget fixed bottom-6 right-6 z-50 flex items-center gap-3">
+            
+            <!-- Ventana de Mensaje (oculta por defecto, se muestra al pasar el ratón) -->
+            <div class="whatsapp-message bg-white p-4 rounded-2xl shadow-xl border border-slate-100 w-72 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none absolute bottom-20 right-0">
+                <p class="text-sm text-slate-700">
+                    Hola 👋, ¿tienes alguna duda sobre nuestros cursos? <br>
+                    <strong>Escríbenos por WhatsApp:</strong>
+                </p>
+                <a href="https://wa.me/34663317695" target="_blank" class="block bg-[#25D366] text-white text-center mt-3 py-3 rounded-xl font-semibold hover:bg-[#128C7E] transition shadow">
+                    <i class="fab fa-whatsapp mr-2"></i> Abrir Chat
+                </a>
+            </div>
+
+            <!-- Botón de Icono Flotante -->
+            <a href="https://wa.me/34663317695" target="_blank" class="whatsapp-icon-btn group flex items-center justify-center bg-[#25D366] text-white rounded-full w-16 h-16 shadow-2xl hover:bg-[#128C7E] transition-all duration-300 transform hover:scale-110">
+                <i class="fab fa-whatsapp text-3xl"></i>
+            </a>
+
+        </div>
+
+        <!-- =============================================
+             ESTILOS CSS PARA LA BARRA FLOTANTE
+             ============================================= -->
+        <style is:global>
+            /* Importación de Tailwind v4 (si usas un archivo global.css, muévelo allí) */
+            @import "tailwindcss";
+
+            /* Estilos específicos para que el widget flote y se muestre el mensaje */
+            .whatsapp-widget:hover .whatsapp-message {
+                opacity: 1;
+                translate: 0 0;
+                pointer-events: auto;
+            }
+
+            /* Aseguramos que el botón no se tape con el formulario */
+            #contacto,
+            #contacto form,
+            #contacto .bg-slate-50,
+            #contacto .p-12 {
+                position: relative;
+                z-index: 10;
+            }
+
+            /* Elevamos el widget por encima de todo */
+            .whatsapp-widget {
+                z-index: 100;
+            }
+        </style>
+
+    </body>
+</html>
