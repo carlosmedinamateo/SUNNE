@@ -6,6 +6,26 @@ import Layout from '../layouts/Layout.astro';
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-4 max-w-md mx-auto">
+  
+  <input type="hidden" name="access_key" value="95b4dd1a-0bd0-425a-8f6b-6f512299cf76" />
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Nombre</label>
+    <input type="text" name="name" required class="w-full border rounded p-2" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Correo electronico</label>
+    <input type="email" name="email" required class="w-full border rounded p-2" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Mensaje</label>
+    <textarea name="message" required class="w-full border rounded p-2" rows="4"></textarea>
+  </div>
+
+  <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+    Enviar mensaje
+  </button>
+</form>
