@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 
 // Logo del navbar (ajusta la ruta si difiere)
 import logosune from '../../assets/images/logo_1_7cm.png';
+import fotoGlobos from '../../assets/images/entrada-clase.jpeg';
 
 // Importa aquí las imágenes de los proyectos reales cuando las tengas
 // import fotoSeptiembre from '../../assets/images/proyecto_septiembre.jpg';
@@ -11,16 +12,24 @@ import logosune from '../../assets/images/logo_1_7cm.png';
 const proyectosMes = [
   {
     mes: "Septiembre",
+    titulo: "Fiesta de Bienvenida y Dinámicas Iniciales",
+    estado: "completado",
+    tag: "Apertura del Curso",
+    descripcion: "Primera toma de contacto con las familias y estudiantes y presentación del equipo docente.",
+    imagen: fotoGlobos
+  },
+  {
+    mes: "Septiembre",
     titulo: "Proyecto de Bienvenida e Inmersión",
-    estado: "completado", // 'activo', 'proximo', o 'completado'
+    estado: "activo",
     tag: "Inicio de Curso",
     descripcion: "Dinámicas de presentación, fijación de metas anuales y primeras actividades temáticas del curso.",
-    imagen: null // Pon la variable importada cuando la tengas
+    imagen: null
   },
   {
     mes: "Octubre",
     titulo: "Próximamente / Coming Soon",
-    estado: "activo",
+    estado: "proximo",
     tag: "En Planificación",
     descripcion: "Estamos preparando un taller especial para este mes. Muy pronto revelaremos la temática.",
     imagen: null
@@ -145,15 +154,15 @@ const proyectosMes = [
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
                         
                         <!-- CONTENEDOR FOTO / COMING SOON -->
-                        <div class="relative h-56 bg-slate-100 flex items-center justify-center overflow-hidden">
+                        <div class="relative h-130 w-full bg-slate-100 overflow-hidden">
                             {item.imagen ? (
                                 <Image 
-                                    src={item.imagen} 
-                                    alt={item.titulo} 
-                                    class="w-full h-full object-cover"
-                                />
+    src={item.imagen} 
+    alt={item.titulo} 
+    class="absolute inset-0 w-full h-full object-cover object-top block transition-transform duration-500 hover:scale-105"
+/>
                             ) : (
-                                <div class="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex flex-col items-center justify-center p-6 text-center border-b border-slate-100">
+                                <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex flex-col items-center justify-center p-6 text-center">
                                     <span class="text-4xl mb-2">✨</span>
                                     <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Próximamente</span>
                                     <span class="text-lg font-bold text-slate-500 mt-1">Coming Soon</span>
@@ -161,12 +170,12 @@ const proyectosMes = [
                             )}
 
                             <!-- BADGE MES EN LA ESQUINA -->
-                            <div class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow">
+                            <div class="absolute top-4 left-4 z-10 bg-slate-900/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow">
                                 {item.mes}
                             </div>
 
                             <!-- BADGE ESTADO -->
-                            <div class="absolute top-4 right-4">
+                            <div class="absolute top-4 right-4 z-10">
                                 {item.estado === 'activo' && (
                                     <span class="bg-orange-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
                                         En Curso

@@ -5,9 +5,10 @@ import { Image } from 'astro:assets';
 import logosune from '../../assets/images/logo_1_7cm.png';
 
 // Importa aquí tus fotos cuando las guardes en assets (o déjalas comentadas mientras pruebas)
-// import fotoEntorno from '../../assets/images/campo_exterior.jpg';
-// import fotoAulas from '../../assets/images/aulas_interiores.jpg';
+ import fotoEntorno from '../../assets/images/mara-verde.jpeg';
+ import fotoAulas from '../../assets/images/clase-dentro.jpeg';
  import fotoJolly from '../../assets/images/jolly-phonics.png';
+ import fotoSilencio from '../../assets/images/gabi.jpeg';
  import fotoCambridge from '../../assets/images/University_of_Cambridge-Logo.wine.png';
 ---
 
@@ -74,8 +75,11 @@ import logosune from '../../assets/images/logo_1_7cm.png';
                     <!-- FOTO INSTALACIÓN 1 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md flex flex-col">
                         <div class="bg-slate-200 h-64 flex items-center justify-center text-slate-400 font-medium">
-                            <!-- <Image src={fotoEntorno} alt="Entorno natural" class="w-full h-full object-cover" /> -->
-                            🌿 [Foto Entorno / Exteriores]
+                          <Image 
+                src={fotoEntorno} 
+                alt="Entorno natural y exteriores de SUNNE ACADEMY" 
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
+            />  <!-- <Image src={fotoEntorno} alt="Entorno natural" class="w-full h-full object-cover" /> -->                         
                         </div>
                         <div class="p-5">
                             <h3 class="font-bold text-slate-900 text-base">Espacios Verdes y Vistas</h3>
@@ -86,8 +90,12 @@ import logosune from '../../assets/images/logo_1_7cm.png';
                     <!-- FOTO INSTALACIÓN 2 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md flex flex-col">
                         <div class="bg-slate-200 h-64 flex items-center justify-center text-slate-400 font-medium">
-                            <!-- <Image src={fotoAulas} alt="Aulas luminosas" class="w-full h-full object-cover" /> -->
-                            🪟 [Foto Aulas Luminosas]
+                           <Image 
+                src={fotoAulas} 
+                alt="Entorno natural y exteriores de SUNNE ACADEMY" 
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
+            />
+                        
                         </div>
                         <div class="p-5">
                             <h3 class="font-bold text-slate-900 text-base">Aula Recién Reformada y Amplia</h3>
@@ -98,7 +106,11 @@ import logosune from '../../assets/images/logo_1_7cm.png';
                     <!-- FOTO INSTALACIÓN 3 -->
                     <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md flex flex-col">
                         <div class="bg-slate-200 h-64 flex items-center justify-center text-slate-400 font-medium">
-                            📸 [Foto Rincón de Estudio / Biblioteca]
+                            <Image 
+                src={fotoSilencio} 
+                alt="Entorno natural y exteriores de SUNNE ACADEMY" 
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
+            />
                         </div>
                         <div class="p-5">
                             <h3 class="font-bold text-slate-900 text-base">Silencio y Concentración</h3>
